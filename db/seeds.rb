@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-10000.times do |n|
+100000.times do |n|
     a = Account.new
     a.name =  Faker::Name.name
     a.email =  Faker::Internet.email
