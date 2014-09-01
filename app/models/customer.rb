@@ -3,4 +3,5 @@ class Customer < Account
 	scope :premier, -> { where("employees > ?", 60) }
 	scope :newest, -> { order("created_at DESC") }
 	scope :starts_with, ->(letter) { where("name LIKE ?", letter + "%") }
+	scope :hamptons, -> { where(name: "Hampton") }
 end
