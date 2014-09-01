@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
 
 	def index
-		@accounts = Customer.all
+		@accounts = Customer.premier.all
 	end
 
 	def show
