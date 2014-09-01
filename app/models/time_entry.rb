@@ -16,4 +16,5 @@ class TimeEntry < AccountEntry
 		end
 		true
 	end
+
 end
