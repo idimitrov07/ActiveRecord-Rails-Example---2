@@ -1,9 +1,9 @@
 class EmployeesController < ApplicationController
-	def index 
+	def index
 		@employees = Employee.all
 	end
 
-	def show 
+	def show
 		@employee = Employee.find(params[:id])
 	end
 
@@ -11,4 +11,5 @@ class EmployeesController < ApplicationController
 		e = Employee.create(params.require(:employee).permit(:name))
 		redirect_to employee_path(e)
 	end
+
 end

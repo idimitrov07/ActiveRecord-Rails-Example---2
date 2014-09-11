@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'faker', '~> 1.4.3'
+gem 'state_machine', '~> 1.2.0'
 
 
 group :doc do

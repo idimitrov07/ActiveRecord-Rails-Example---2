@@ -8,7 +8,6 @@ class Account < ActiveRecord::Base
 
 	validate :your_name_is_not_dumb
 
-
 	def your_name_is_not_dumb
 		if name.include?("dumb")
 			errors.add(:name, "is dumb")
@@ -17,7 +16,7 @@ class Account < ActiveRecord::Base
 
 	def update_balance!
 		update_attributes(balance:
-			self.account_entries.sum(:amount)
+			self.account_entries.approved.sum(:amount)
 		)
 	end
 end
