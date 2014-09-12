@@ -16,8 +16,13 @@ Billinger::Application.routes.draw do
   resources :accounts
 
   resources :employees do
-    resources :time_entries
+    resources :time_entries do
+      member do
+        put :approve
+      end
+    end
   end
+
 
   # Example resource route with options:
   #   resources :products do

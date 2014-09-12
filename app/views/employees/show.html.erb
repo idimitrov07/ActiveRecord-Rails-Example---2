@@ -17,5 +17,10 @@
     <%= entry.time %>
     <%= entry.account.name %>
     <%= entry.created_at %>
+    <% unless entry.state == "approved" %>
+      <%= form_for [@employee, entry], url: approve_employee_time_entry_path(@employee, entry), method: :put do |f| %>
+        <%= f.submit "Approve Entry" %>
+      <% end %>
+    <% end %>
   </div>
 <% end %>

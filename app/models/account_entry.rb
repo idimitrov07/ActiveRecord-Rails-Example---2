@@ -9,6 +9,7 @@ class AccountEntry < ActiveRecord::Base
 	scope :approved,-> { with_state(:approved) }
 
 	state_machine :state, :initial => :submitted do
+		after_transition on: :approve, do: :update_account_balance!
 		event :approve do
 			transition :submitted => :approved
 		end
