@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
 
 	def index
-		@accounts = Customer.premier.all
+		@accounts = Customer.premier.last(20)
 	end
 
 	def show
